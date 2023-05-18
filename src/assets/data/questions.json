@@ -1,0 +1,124 @@
+[
+  {
+    "title": "¿Cuántos años de experiencia tienes en desarrollo de software?",
+    "options": [
+      {
+        "answer": "Menos de 1 año",
+        "score": 0
+      },
+      {
+        "answer": "1-2 años",
+        "score": 1
+      },
+      {
+        "answer": "2-3 años",
+        "score": 2
+      },
+      {
+        "answer": "3-5 años",
+        "score": 3
+      },
+      {
+        "answer": "5-7 años",
+        "score": 4
+      },
+      {
+        "answer": "7-10 años",
+        "score": 5
+      },
+      {
+        "answer": "10+ años",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "title": "¿Qué lenguajes de programación conoces?",
+    "options": [
+      {
+        "answer": "1",
+        "score": 0
+      },
+      {
+        "answer": "2-3",
+        "score": 1
+      },
+      {
+        "answer": "4-5",
+        "score": 2
+      },
+      {
+        "answer": "6+",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "title": "¿Has liderado proyectos o equipos?",
+    "options": [
+      {
+        "answer": "No",
+        "score": 0
+      },
+      {
+        "answer": "Sí, he liderado proyectos",
+        "score": 2
+      },
+      {
+        "answer": "Sí, he liderado equipos",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "title": "¿Tienes experiencia con metodologías ágiles (Scrum, Kanban)?",
+    "options": [
+      {
+        "answer": "No",
+        "score": 0
+      },
+      {
+        "answer": "Sí, tengo experiencia pero no certificación",
+        "score": 2
+      },
+      {
+        "answer": "Sí, estoy certificado",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "title": "¿Has trabajado con control de versiones (Git, Mercurial)?",
+    "options": [
+      {
+        "answer": "No",
+        "score": 0
+      },
+      {
+        "answer": "Sí, he trabajado con ellos",
+        "score": 1
+      },
+      {
+        "answer": "Sí, los uso regularmente",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "title": "¿Has diseñado y/o implementado arquitecturas de software?",
+    "options": [
+      {
+        "answer": "No",
+        "score": 0
+      },
+      {
+        "answer": "Sí, he contribuido a su diseño e implementación",
+        "score": 2
+      },
+      {
+        "answer": "Sí, he liderado el diseño e implementación",
+        "score": 3
+      }
+    ]
+  }
+]

@@ -1,24 +1,38 @@
-import React from "react";
-import logo from "@assets/img/logo.svg";
+import q from "@assets/data/questions.json";
 import "@pages/popup/Popup.css";
+import { useState } from "react";
+import Question from "./components/question/Question";
 
 const Popup = () => {
+  const [option, setOption] = useState<string>("");
+  const [score, setScore] = useState<number>(0);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/pages/popup/Popup.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
+        <h1>My Level</h1>
       </header>
+      <div>
+        <h3>In few questions youll know your software seniority level</h3>
+        <button>Start</button>
+        {q[0]?.title}------
+        <Question
+          title={q[0].title}
+          options={q[0].options}
+          selectedOption={option}
+          handleChange={function (e): void {
+            setOption(e.target.value);
+            const optionSelected = q[0].options.filter(
+              (o) => o.answer === e.target.value
+            );
+            setScore(optionSelected[0].score);
+            // return alert(option + "-" + "score:" + score);
+          }}
+        />
+      </div>
+      <div>
+        <p>Selected: {option}</p>
+        <p>Score: {score}</p>
+      </div>
     </div>
   );
 };

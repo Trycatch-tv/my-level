@@ -1,0 +1,17 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+
+  select {
+    width: 200px;
+    padding: 0.5em;
+  }
+}
