@@ -13,14 +13,14 @@ const Question = ({
   handleChange,
 }: QuestionProps) => {
   return (
-    <div className="question">
-      <p className="text-white  text-md">{title}</p>
+    <>
+      <p className="text-white flex text-sm">{title}</p>
       {options.map((option: any) => (
         <div key={option.title}>
-          <div className="flex mb-4 ">
+          <div className="flex mb-4 mt-2 w-6/6 ">
             <input
               type="radio"
-              className="w-20 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600 "
+              className="w-20 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
               id={option.answer}
               name={option.title}
               value={option.answer}
@@ -33,7 +33,7 @@ const Question = ({
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 
