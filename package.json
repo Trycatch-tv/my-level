@@ -2,7 +2,8 @@
   "name": "my-level",
   "version": "0.0.1",
   "description": "A simple way to know your software seniority level",
-  "license": "MIT",
+  "license": "GNU GPLv3",
+  "author": "Judlup | Trycatch.tv",
   "repository": {
     "type": "git",
     "url": "https://github.com/Trycatch-tv/my-level.git"
@@ -13,7 +14,8 @@
     "build:hmr": "rollup --config utils/reload/rollup.config.ts",
     "wss": "node utils/reload/initReloadServer.js",
     "dev": "npm run build:hmr && (run-p wss build:watch)",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "type": "module",
   "dependencies": {

@@ -1,6 +1,6 @@
 import q from "@assets/data/questions.json"
 import "@pages/popup/Popup.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Question from "./components/question/Question"
 
 const Popup = () => {
@@ -8,7 +8,10 @@ const Popup = () => {
   const [score, setScore] = useState<number>(0)
   const [isStarted, setIsStarted] = useState<boolean>(false)
   const [questionNumber, setQuestionNumber] = useState<number>(0)
-
+  const [answers, setAnswers] = useState<any>([])
+  const [isAnswered, setIsAnswered] = useState<boolean>(false)
+  const [isLastQuestion, setIsLastQuestion] = useState<boolean>(false)
+  const [isFirstQuestion, setIsFirstQuestion] = useState<boolean>(true)
   const nextQuestion = () => {
     if (option === "") return alert("Please select an option")
     if (questionNumber !== q.length - 1) {
@@ -22,6 +25,104 @@ const Popup = () => {
     if (questionNumber !== 0) {
       setQuestionNumber(questionNumber - 1)
       setOption("")
+    }
+  }
+
+  const handleOptionChange = (e: any) => {
+    setOption(e.target.value)
+    const optionSelected = q[questionNumber].options.filter(
+      (o) => o.answer === e.target.value
+    )
+    setScore(optionSelected[0].score)
+    if (answers[questionNumber]?.length == 0) {
+      // Insert new answer
+      setAnswers([...answers, optionSelected[0]])
+    } else {
+      // Update answer
+      answers[questionNumber] = optionSelected[0]
+      setAnswers(answers)
+    }
+  }
+
+  useEffect(() => {
+    // Check if there is an answer for this question
+    if (answers[questionNumber] !== undefined) {
+      setOption(answers[questionNumber].answer)
+      setScore(answers[questionNumber].score)
+      setIsAnswered(true)
+    } else {
+      setIsAnswered(false)
+    }
+
+    // Check if this is the first question
+    if (questionNumber === 0) {
+      setIsFirstQuestion(true)
+    } else {
+      setIsFirstQuestion(false)
+    }
+
+    // Check if this is the last question
+    if (questionNumber === q.length - 1) {
+      setIsLastQuestion(true)
+    } else {
+      setIsLastQuestion(false)
+    }
+  }, [questionNumber])
+
+  function getLevel(totalScore: number) {
+    if (totalScore <= 20) {
+      return "Beginner"
+    } else if (totalScore <= 25) {
+      return "Trainee"
+    } else if (totalScore <= 30) {
+      return "Junior"
+    } else if (totalScore <= 35) {
+      return "Junior Advanced"
+    } else if (totalScore <= 40) {
+      return "Semi Senior"
+    } else if (totalScore <= 45) {
+      return "Semi Senior Advanced"
+    } else if (totalScore <= 50) {
+      return "Senior"
+    } else if (totalScore <= 55) {
+      return "Senior Advanced"
+    } else if (totalScore <= 60) {
+      return "Tech Lead"
+    } else if (totalScore <= 65) {
+      return "Senior Tech Lead"
+    } else if (totalScore <= 70) {
+      return "Engineer Manager"
+    } else if (totalScore <= 75) {
+      return "Senior Engineer Manager"
+    } else if (totalScore <= 80) {
+      return "VP"
+    } else if (totalScore <= 85) {
+      return "Senior VP"
+    } else if (totalScore <= 90) {
+      return "Executive VP"
+    } else if (totalScore <= 95) {
+      return "Senior Executive VP"
+    } else {
+      return "CTO"
+    }
+  }
+
+  function finishQuiz() {
+    const userConfirm = confirm("do you want to finish?")
+    if (userConfirm) {
+      const totalScore = answers.reduce((acc: any, answer: any) => {
+        return acc + answer.score
+      }, 0)
+      const level: string = getLevel(totalScore)
+      alert(`Your level is ${level}`)
+      setIsStarted(false)
+      setQuestionNumber(0)
+      setOption("")
+      setScore(0)
+      setAnswers([])
+      setIsAnswered(false)
+      setIsLastQuestion(false)
+      setIsFirstQuestion(true)
     }
   }
 
@@ -61,25 +162,26 @@ const Popup = () => {
       {isStarted && (
         <div className="w-scree h-full overflow-hidden">
           <div className="mb-2">
-            <div className="flex">
+            <div className="flex justify-between">
               <div className="mt-2 mb-4 px-5 py-2.5 text-center text-sm font-bold text-gray-500 border-gray-500 border rounded-lg w-1/6 h-1/6">
-                {questionNumber + 1} / {q.length - 1}
+                {questionNumber + 1} / {q.length}
               </div>
-              {/* <p className="text-white">Selected: {option}</p>
-              <p className="text-white">Score: {score}</p> */}
+              <div
+                className={`mt-2 mb-4 px-5 py-2.5 text-center text-sm font-bold w-auto ${
+                  isAnswered
+                    ? "text-green-400 border-green-400"
+                    : "text-gray-500 border-gray-500"
+                } border rounded-lg w-1/6 h-1/6`}
+              >
+                {isAnswered ? "Answered" : "Not Answered"}
+              </div>
             </div>
             <div className="border-2 border-gray-500 rounded-lg p-4 h-70">
               <Question
                 title={q[questionNumber].title}
                 options={q[questionNumber].options}
                 selectedOption={option}
-                handleChange={function (e): void {
-                  setOption(e.target.value)
-                  const optionSelected = q[questionNumber].options.filter(
-                    (o) => o.answer === e.target.value
-                  )
-                  setScore(optionSelected[questionNumber].score)
-                }}
+                handleChange={handleOptionChange}
               />
             </div>
           </div>
@@ -87,7 +189,9 @@ const Popup = () => {
             <div className=" flex justify-around">
               <button
                 onClick={prevQuestion}
-                className="relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                className={`${
+                  isFirstQuestion ? "hidden" : ""
+                } relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800`}
               >
                 <span className="flex relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   <svg
@@ -102,10 +206,30 @@ const Popup = () => {
               </button>
               <button
                 onClick={nextQuestion}
-                className="relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                className={`${
+                  isLastQuestion ? "hidden" : ""
+                } relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800`}
               >
                 <span className="flex relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   Next
+                  <svg
+                    className="fill-white w-5 h-5 ml-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                  </svg>
+                </span>
+              </button>
+
+              <button
+                onClick={finishQuiz}
+                className={`${
+                  isLastQuestion ? "" : "hidden"
+                } relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800`}
+              >
+                <span className="flex relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  Finish
                   <svg
                     className="fill-white w-5 h-5 ml-2"
                     xmlns="http://www.w3.org/2000/svg"

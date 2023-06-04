@@ -1,96 +1,53 @@
-<div align="center">
-<img src="public/icon-128.png" alt="logo"/>
-<h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript</h1>
+# My Level
 
-![](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![](https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![](https://badges.aleen42.com/src/vitejs.svg)
-![GitHub action badge](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/actions/workflows/build-zip.yml/badge.svg)
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Jonghakseo/chrome-extension-boilerplate-react-viteFactions&count_bg=%23#222222&title_bg=%23#454545&title=😀&edge_flat=true" alt="hits"/>
+Este proyecto consiste en una extensión de Google Chrome que ayuda a los desarrolladores de software a evaluar su nivel de seniority a través de una serie de preguntas.
 
+## Características
 
-> This project is listed in the [Awesome Vite](https://github.com/vitejs/awesome-vite)
+- Realiza una serie de preguntas relevantes al usuario para entender su nivel de habilidad y experiencia.
+- Categoriza a los usuarios en diferentes niveles de seniority según sus respuestas.
+- Ofrece una interfaz de usuario intuitiva y fácil de usar.
 
-</div>
+## Cómo usar
 
-## Table of Contents
+1. Instale la extensión en su navegador Google Chrome.
+2. Haga clic en el icono de la extensión en la barra de herramientas de Chrome para iniciarla.
+3. Responda las preguntas presentadas por la extensión.
+4. Reciba una evaluación de su nivel de seniority basada en sus respuestas.
 
-- [Intro](#intro)
-- [Features](#features)
-- [Installation](#installation)
-  - [Procedures](#procedures)
-- [Screenshots](#screenshots)
-  - [NewTab](#newtab)
-  - [Popup](#popup)  
-- [Sample](#sample)
-- [Documents](#documents)
+## Tecnologías utilizadas
 
-## Intro <a name="intro"></a>
-This boilerplate is made for creating chrome extensions using React and Typescript.
-> The focus was on improving the build speed and development experience with Vite.
+- React
+- Vite
+- Tailwind CSS
+- SCSS
+- Google Chrome Extension API
 
-## Features <a name="features"></a>
-- [React 18](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [Vite](https://vitejs.dev/)
-- [SASS](https://sass-lang.com/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
-- HRR(Hot Rebuild & Refresh/Reload)
+## Capturas de pantalla
 
-## Installation <a name="installation"></a>
+![Captura de pantalla 1](./src/assets/img/demo_1.png)
+![Captura de pantalla 2](./src/assets/img/demo_2.png))
 
-### Procedures <a name="procedures"></a>
-1. Clone this repository.
-2. Change `name` and `description` in package.json => **Auto synchronize with manifest** 
-3. Run `yarn install` or `npm i` (check your node version >= 16.6, recommended >= 18)
-4. Run `yarn dev` or `npm run dev`
-5. Load Extension on Chrome
-   1. Open - Chrome browser
-   2. Access - chrome://extensions
-   3. Check - Developer mode
-   4. Find - Load unpacked extension
-   5. Select - `dist` folder in this project (after dev or build)
-6. If you want to build in production, Just run `yarn build` or `npm run build`.
+## Instalación
 
-## Screenshots <a name="screenshots"></a>
+1. Clone este repositorio.
+2. Ejecute `npm install` para instalar las dependencias necesarias.
+3. Ejecute `npm run build` para construir el proyecto para producción.
+4. Cargue la extensión en Google Chrome a través de la página de extensiones (chrome://extensions/).
+5. Habilite la extensión.
 
-### New Tab <a name="newtab"></a>
+## Contribución
 
-<img width="971" src="https://user-images.githubusercontent.com/53500778/162631646-cd40976b-b737-43d0-8e6a-6ac090a2e2d4.png">
+Si desea contribuir a este proyecto, por favor realice un "fork" de este repositorio y envíe un "pull request" para cualquier cambio que desee sugerir. Asegúrese de proporcionar una descripción detallada de los cambios y las razones para los mismos.
 
-### Popup <a name="popup"></a>
+## Licencia
 
-<img width="314" alt="popup" src="https://user-images.githubusercontent.com/53500778/203561728-23517d46-12e3-4139-8a4f-e0b2f22a6ab3.png">
+Este proyecto está licenciado bajo los términos de la licencia GPL versión 3.
 
-## Sample <a name="sample"></a>
-- https://github.com/Jonghakseo/drag-gpt-extension
-- https://github.com/Jonghakseo/pr-commit-noti
+## Contacto
 
-## Documents <a name="documents"></a>
-- [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
-- [ChromeExtension](https://developer.chrome.com/docs/extensions/mv3/)
-- [Rollup](https://rollupjs.org/guide/en/)
-- [Rollup-plugin-chrome-extension](https://www.extend-chrome.dev/rollup-plugin)
+Si desea contactarme, puede hacerlo a través de mi correo electrónico: [judlup@trycatch.tv](mailto:judlup@trycatch.tv)
 
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Jonghakseo/chrome-extension-boilerplate-react-vite&type=Date)](https://star-history.com/#Jonghakseo/chrome-extension-boilerplate-react-vite&Date)
-
-
-
----
-## Thanks To
-
-| [Jetbrains](https://jb.gg/OpenSourceSupport)                                                                           | [Jackson Hong](https://www.linkedin.com/in/j-acks0n/)                                            |
-|--------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| <img width="100" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo (Main) logo."> | <img width="100" src='https://avatars.githubusercontent.com/u/23139754?v=4' alt='Jackson Hong'/> |
-
-
----
-
-[Jonghakseo](https://nookpi.tistory.com/)
+- [@TryCatch.tv](https://www.tiktok.com/@trycatch.tv)
+- [Judlup](https://www.linkedin.com/in/judlup/)
+- [Linktr.ee](https://linktr.ee/trycatch.tv)
