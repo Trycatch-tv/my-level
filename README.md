@@ -36,6 +36,13 @@ Este proyecto consiste en una extensión de Google Chrome que ayuda a los desarr
 4. Cargue la extensión en Google Chrome a través de la página de extensiones (chrome://extensions/).
 5. Habilite la extensión.
 
+## Todo
+
+- [ ] Implementar Zustand.
+- [ ] Mejorar código.
+- [ ] Persistencia en los datos.
+- [ ] Sugerencia de contenido de acuerdo al nivel.
+
 ## Contribución
 
 Si desea contribuir a este proyecto, por favor realice un "fork" de este repositorio y envíe un "pull request" para cualquier cambio que desee sugerir. Asegúrese de proporcionar una descripción detallada de los cambios y las razones para los mismos.
