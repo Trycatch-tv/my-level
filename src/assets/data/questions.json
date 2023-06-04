@@ -2,123 +2,134 @@
   {
     "title": "¿Cuántos años de experiencia tienes en desarrollo de software?",
     "options": [
-      {
-        "answer": "Menos de 1 año",
-        "score": 0
-      },
-      {
-        "answer": "1-2 años",
-        "score": 1
-      },
-      {
-        "answer": "2-3 años",
-        "score": 2
-      },
-      {
-        "answer": "3-5 años",
-        "score": 3
-      },
-      {
-        "answer": "5-7 años",
-        "score": 4
-      },
-      {
-        "answer": "7-10 años",
-        "score": 5
-      },
-      {
-        "answer": "10+ años",
-        "score": 6
-      }
+      { "answer": "Menos de 1 año", "score": 1 },
+      { "answer": "1-2 años", "score": 2 },
+      { "answer": "2-4 años", "score": 3 },
+      { "answer": "4-6 años", "score": 4 },
+      { "answer": "6-8 años", "score": 5 },
+      { "answer": "8+ años", "score": 6 }
     ]
   },
   {
-    "title": "¿Qué lenguajes de programación conoces?",
+    "title": "¿Cuántos lenguajes de programación conoces?",
     "options": [
-      {
-        "answer": "1",
-        "score": 0
-      },
-      {
-        "answer": "2-3",
-        "score": 1
-      },
-      {
-        "answer": "4-5",
-        "score": 2
-      },
-      {
-        "answer": "6+",
-        "score": 3
-      }
+      { "answer": "1", "score": 1 },
+      { "answer": "2-3", "score": 2 },
+      { "answer": "4-5", "score": 3 },
+      { "answer": "6+", "score": 4 }
     ]
   },
   {
     "title": "¿Has liderado proyectos o equipos?",
     "options": [
-      {
-        "answer": "No",
-        "score": 0
-      },
-      {
-        "answer": "Sí, he liderado proyectos",
-        "score": 2
-      },
-      {
-        "answer": "Sí, he liderado equipos",
-        "score": 3
-      }
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, he liderado proyectos", "score": 3 },
+      { "answer": "Sí, he liderado equipos", "score": 4 }
     ]
   },
   {
     "title": "¿Tienes experiencia con metodologías ágiles (Scrum, Kanban)?",
     "options": [
-      {
-        "answer": "No",
-        "score": 0
-      },
-      {
-        "answer": "Sí, tengo experiencia pero no certificación",
-        "score": 2
-      },
-      {
-        "answer": "Sí, estoy certificado",
-        "score": 3
-      }
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, tengo experiencia pero no certificación", "score": 3 },
+      { "answer": "Sí, estoy certificado", "score": 4 }
     ]
   },
   {
-    "title": "¿Has trabajado con control de versiones (Git, Mercurial)?",
+    "title": "¿Has trabajado con control de versiones (Git)?",
     "options": [
-      {
-        "answer": "No",
-        "score": 0
-      },
-      {
-        "answer": "Sí, he trabajado con ellos",
-        "score": 1
-      },
-      {
-        "answer": "Sí, los uso regularmente",
-        "score": 2
-      }
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, he trabajado con ellos", "score": 2 },
+      { "answer": "Sí, los uso regularmente", "score": 3 }
     ]
   },
   {
     "title": "¿Has diseñado y/o implementado arquitecturas de software?",
     "options": [
-      {
-        "answer": "No",
-        "score": 0
-      },
-      {
-        "answer": "Sí, he contribuido a su diseño e implementación",
-        "score": 2
-      },
-      {
-        "answer": "Sí, he liderado el diseño e implementación",
-        "score": 3
-      }
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, he contribuido a su diseño e implementación", "score": 3 },
+      { "answer": "Sí, he liderado el diseño e implementación", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado con bases de datos relacionales y no relacionales?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, con una de ellas", "score": 2 },
+      { "answer": "Sí, con ambas", "score": 3 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado en proyectos de código abierto?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, he contribuido", "score": 3 },
+      { "answer": "Sí, he liderado uno o más proyectos", "score": 4 }
+    ]
+  },  {
+  "title": "¿Has trabajado con frameworks/librerías modernas (React, Angular, Vue)?",
+  "options": [
+    { "answer": "No", "score": 1 },
+    { "answer": "Sí, con uno de ellos", "score": 2 },
+    { "answer": "Sí, con dos de ellos", "score": 3 },
+    { "answer": "Sí, con todos ellos", "score": 4 }
+  ]
+},
+  {
+    "title": "¿Has participado en todas las fases del ciclo de vida del desarrollo del software?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, pero no en todas las fases", "score": 2 },
+      { "answer": "Sí, en todas las fases", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado con pruebas de software (unitarias, integración, rendimiento)?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, pero solo con algunas", "score": 2 },
+      { "answer": "Sí, con todas", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado con infraestructura como código?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, con uno de ellos", "score": 2 },
+      { "answer": "Sí, con ambos", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado en la integración o desarrollo de APIs?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, he trabajado en la integración", "score": 2 },
+      { "answer": "Sí, he desarrollado APIs", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Tienes experiencia con el desarrollo de aplicaciones móviles?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, pero solo aplicaciones nativas o solo aplicaciones híbridas", "score": 2 },
+      { "answer": "Sí, he desarrollado tanto aplicaciones nativas como híbridas", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Has trabajado con despliegue continuo e integración continua (CI/CD)?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, pero solo con CI o solo con CD", "score": 2 },
+      { "answer": "Sí, he trabajado con ambas", "score": 4 }
+    ]
+  },
+  {
+    "title": "¿Tienes experiencia con la seguridad de las aplicaciones y cumplimiento de las normativas (OWASP, GDPR)?",
+    "options": [
+      { "answer": "No", "score": 1 },
+      { "answer": "Sí, pero solo con seguridad o solo con normativas", "score": 2 },
+      { "answer": "Sí, tengo experiencia con ambas", "score": 4 }
     ]
   }
 ]
+
