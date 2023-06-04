@@ -2,7 +2,8 @@
   "name": "my-level",
   "version": "0.0.1",
   "description": "A simple way to know your software seniority level",
-  "license": "MIT",
+  "license": "GNU GPLv3",
+  "author": "Judlup | Trycatch.tv",
   "repository": {
     "type": "git",
     "url": "https://github.com/Trycatch-tv/my-level.git"

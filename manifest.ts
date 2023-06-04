@@ -1,4 +1,4 @@
-import packageJson from "./package.json";
+import packageJson from "./package.json"
 
 /**
  * After changing, please reload the extension at `chrome://extensions`
@@ -15,10 +15,10 @@ const manifest: chrome.runtime.ManifestV3 = {
   },
   action: {
     default_popup: "src/pages/popup/index.html",
-    default_icon: "icon-34.png",
+    default_icon: "new-icon-34.png",
   },
   icons: {
-    "128": "icon-128.png",
+    "128": "new-icon-128.png",
   },
   content_scripts: [
     {
@@ -33,12 +33,12 @@ const manifest: chrome.runtime.ManifestV3 = {
       resources: [
         "assets/js/*.js",
         "assets/css/*.css",
-        "icon-128.png",
-        "icon-34.png",
+        "new-icon-128.png",
+        "new-icon-34.png",
       ],
       matches: ["*://*/*"],
     },
   ],
-};
+}
 
-export default manifest;
+export default manifest
