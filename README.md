@@ -2,6 +2,10 @@
 
 Este proyecto consiste en una extensión de Google Chrome que ayuda a los desarrolladores de software a evaluar su nivel de seniority a través de una serie de preguntas.
 
+## Chrome Web Store
+
+[My-Level](https://chrome.google.com/webstore/detail/my-level/mbdaaoibdkddnkadkpjakclfhfogenma)
+
 ## Características
 
 - Realiza una serie de preguntas relevantes al usuario para entender su nivel de habilidad y experiencia.
